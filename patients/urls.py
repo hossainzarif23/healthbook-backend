@@ -1,0 +1,35 @@
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('signup', views.PatientSignupView.as_view()),
+    path('login', views.PatientLoginView.as_view()),
+    path('profile', views.PatientProfileView.as_view()),
+    path('update', views.PatientUpdateProfileView.as_view()),
+    path('doctor-list', views.ListofDoctors.as_view()),
+    path('doctor', views.DoctorProfile.as_view()),
+    path('get-access-requests', views.GetPendingRequests.as_view()),
+    path('response-access', views.RequestUpdateStatusView.as_view()),
+    path('upload-prescription', views.UploadPrescriptionView.as_view()),
+    path('get-prescription', views.GetPrescriptionView.as_view()),
+    path('get-prescription-access', views.GetPrescriptionAccessView.as_view()),
+    path('update-prescription-access', views.PrescriptionAccessUpdateAPIView.as_view()),
+    path('get-list-of-prescriptions', views.GetListofprescriptionView.as_view()),
+    path('current-medications', views.GetCurrentMedicinesView.as_view()),
+    path('current-diseases', views.GetCurrentDiseaseView.as_view()),
+    path('add-treatment', views.CreateTreatmentView.as_view()),
+    path('update-treatment', views.UpdateTreatmentView.as_view()),
+    path('current-treatments', views.GetCurrentTreatmentsView.as_view()),
+    path('treatments', views.GetTreatmentsView.as_view()),
+    path('share-treatment', views.ShareTreatmentView.as_view()),
+    path('shared-treatments', views.GetSharedTreatmentsView.as_view()),
+    path('unshare-treatment', views.UnShareTreatmentsView.as_view()),
+    path('treatment', views.GetTreatmentView.as_view()),
+    path('last-one-year-diseases', views.PatientDiseaseFrequencyView.as_view()),
+    path('patient-treatment-success', views.PatientTreatmentSuccessRateView.as_view()),
+    path('patient-doctor-visit', views.PatientDoctorVisitView.as_view()),
+    path('recurring-diseases', views.RecurringDiseasesView.as_view()),
+    path('patient-satisfaction', views.PatientHealthSatisfactionView.as_view()),
+    path('add-rating', views.AddRatingView.as_view()),
+]
