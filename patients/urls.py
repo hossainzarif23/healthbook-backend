@@ -32,4 +32,7 @@ urlpatterns = [
     path('recurring-diseases', views.RecurringDiseasesView.as_view()),
     path('patient-satisfaction', views.PatientHealthSatisfactionView.as_view()),
     path('add-rating', views.AddRatingView.as_view()),
+    path('delete-rating', views.DeleteRatingView.as_view()),
+    path('get-rating', views.GetRatingView.as_view()),
+    path('update-rating', views.UpdateRatingView.as_view()),
 ]
