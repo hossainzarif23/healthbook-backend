@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Post, Comment, Topic, UpvotePost, UpvoteComment, ReportPost, ReportComment, Image
+from .models import Post, Comment, Topic, UpvotePost, UpvoteComment, ReportPost, ReportComment, Image, CoverImage
 from users.models import User
 from patients.models import Patient
 from doctors.models import Doctor
@@ -45,16 +45,28 @@ class TopicSerializer(serializers.ModelSerializer):
             allowed = set(fields)
             existing = set(self.fields.keys())
             for field_name in existing - allowed:
-                self.fields.pop(field_name)    
+                self.fields.pop(field_name)
+
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Image
+        fields = '__all__'
+
+class CoverImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CoverImage
+        fields = '__all__'    
 
 class PostSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True)
     topics = TopicSerializer(many=True, fields=('topic_name',), required=False)  # Allow creating/updating topics
     upvotes = serializers.SerializerMethodField()
     downvotes = serializers.SerializerMethodField()
+    images = ImageSerializer(many=True, read_only=True)
+    cover_images = CoverImageSerializer(many=True, read_only=True)
     class Meta:
         model = Post
-        fields = ('id', 'author', 'title', 'content', 'date', 'comments', 'topics', 'upvotes', 'downvotes')
+        fields = ('id', 'author', 'title', 'content', 'date', 'comments', 'topics', 'upvotes', 'downvotes', 'images', 'cover_images')
 
     def create(self, validated_data):
         topics_data = validated_data.pop('topics', [])

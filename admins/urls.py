@@ -7,4 +7,5 @@ urlpatterns = [
     path('getDoctors', views.GetUnverifiedDoctors.as_view()),
     path('verifyDoctor', views.DoctorVerificationView.as_view()),
     path('deleteDoctor', views.DoctorDeleteView.as_view()),
+    path('treatments-data', views.GetTreatmentsData.as_view()),
 ]

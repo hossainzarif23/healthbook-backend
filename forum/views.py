@@ -4,25 +4,36 @@ from django.shortcuts import render
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from datetime import datetime, timedelta, date
-from .models import Post, Comment, Topic, UpvotePost, UpvoteComment, ReportPost, ReportComment, Image
-from .serializers import PostSerializer, UpvotePostSerializer, CommentSerializer, UpvoteCommentSerializer, UpdatePostSerializer
+from .models import Post, Comment, Topic, UpvotePost, UpvoteComment, ReportPost, ReportComment, Image, CoverImage
+from .serializers import PostSerializer, UpvotePostSerializer, CommentSerializer, UpvoteCommentSerializer, UpdatePostSerializer, ImageSerializer, CoverImageSerializer
 from patients.models import Patient
 from users.models import User
 
 from django.http.response import JsonResponse
 from django.utils.dateparse import parse_date
 
+from rest_framework.parsers import MultiPartParser, FormParser
+
 from django.db.models import Count
+import base64
 
 # Create your views here.
 class CreatePostView(generics.CreateAPIView):
-    def post(self, request, *args, **kwargs):
+    # parser_class = (MultiPartParser, FormParser)
+    def post(self, request, format = None, *args, **kwargs):
         data = request.data
+        print(data)
+        # print(data.get('img', None))
         author = data.get('author', None)
         title = data.get('title', None)
         content = data.get('content', None)
         topics = data.get('topics', None)
+
+        print(author)
+        print(title)
+        print(content)
         print(topics)
+
         dynamic_attributes = ['author', 'title', 'content', 'topics']
         user = User.objects.filter(username = author).first()
         if user is None:
@@ -37,9 +48,9 @@ class CreatePostView(generics.CreateAPIView):
             "topics": topics
         }, fields = dynamic_attributes)
         if serializer.is_valid():
-            print(serializer.validated_data)
             serializer.save()
-            return Response({'responseCode': 200, 'status': 'Post uploaded successfully'})
+            print(serializer.instance.id)
+            return Response({'responseCode': 200, 'status': 'Post uploaded successfully', 'post_id': serializer.instance.id})
 
         return Response({'responseCode': 400, 'status': serializer.errors})
     
@@ -87,7 +98,7 @@ class SearchPostsView(generics.RetrieveAPIView):
         if topics is not None:
             posts = posts.filter(id__in=Topic.objects.filter(topic_name__in=topics).values_list('post_id'))
         if len(posts) > 0:
-            return Response({'responseCode': 200, 'post': PostSerializer(posts, many = True, fields = ['id', 'author', 'title', 'content', 'date', 'topics', 'upvotes', 'downvotes']).data})
+            return Response({'responseCode': 200, 'post': PostSerializer(posts, many = True, fields = ['id', 'author', 'title', 'content', 'date', 'topics', 'upvotes', 'downvotes', 'cover_images']).data})
         else:
             return Response({'responseCode': 404, 'status': 'No posts found'})
         
@@ -171,3 +182,25 @@ class DeleteUpvoteorDownvoteCommentView(generics.GenericAPIView):
             return Response({'responseCode': 400, 'response': 'Not allowed to delete upvote/downvote'})
         upvote_or_downvote.delete()
         return Response({'responseCode': 200, 'response': 'upvote or downvote deleted'})
+    
+class AddImageToPostView(generics.CreateAPIView):
+    parser_classes = (MultiPartParser, FormParser)
+    def create(self, request, format = None, *args, **kwargs):
+        print(request.data)
+        serializer = ImageSerializer(data = request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'responseCode': 200, 'status': 'Image added'})
+        else:
+            return Response({'responseCode': 400, 'status': serializer.errors})
+        
+class AddCoverImageToPostView(generics.CreateAPIView):
+    parser_classes = (MultiPartParser, FormParser)
+    def create(self, request, format = None, *args, **kwargs):
+        print(request.data)
+        serializer = CoverImageSerializer(data = request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'responseCode': 200, 'status': 'Cover Image added'})
+        else:
+            return Response({'responseCode': 400, 'status': serializer.errors})

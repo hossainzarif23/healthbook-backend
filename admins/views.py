@@ -9,7 +9,13 @@ from .models import Admin
 from .serializers import AdminSerializer, DoctorVerificationSerializer
 from users.models import User
 from doctors.models import Doctor
+from patients.models import Patient
+from treatments.models import Treatment
 from doctors.serializers import DoctorSerializer
+
+from django.http import HttpResponse
+
+import csv
 
 class AdminLoginView(generics.GenericAPIView):
     serializer_class = AdminSerializer
@@ -65,3 +71,49 @@ class DoctorDeleteView(generics.RetrieveAPIView):
                 return Response({'responseCode': 400, 'status': serializer.errors})
         else:
             return Response({'responseCode': 400, 'status': 'Doctor or Admin does not exist'})
+        
+class GetTreatmentsData(generics.RetrieveAPIView):
+    def get(self, request, *args, **kwargs):
+        # print(request.GET)
+        area = request.GET.get('area', None)
+        start_date = request.GET.get('start_date', None)
+        end_date = request.GET.get('end_date', None)
+        username = request.GET.get('username', None)
+
+        admin = Admin.objects.filter(user__username=username).first()
+
+        if admin is None:
+            return Response({'responseCode': 400, 'status': 'Not allowed to access this data'})
+
+        print(area, start_date, end_date)
+        treatments = Treatment.objects.filter(
+            patient__area=area,
+            start_date__range=(start_date, end_date)
+        ).select_related('patient')
+
+        print(treatments)
+
+        headers = ['id', 'Disease', 'Status', 'Hospital Name', 'Start Date', 'Last Date', 'Cost']
+
+        csv_filename = 'treatments_' + area + '_' + start_date + '_' + end_date + '.csv'
+
+        # Write data to CSV file
+        with open(csv_filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(headers)  # Write headers to CSV file
+            for treatment in treatments:
+                # Write treatment data to CSV file
+                writer.writerow([
+                    treatment.patient.id,
+                    treatment.disease,
+                    treatment.status,
+                    treatment.hospital_name,
+                    treatment.start_date,
+                    treatment.last_date,
+                    treatment.cost
+                ])
+        
+        with open(csv_filename, 'rb') as csv_file:
+            response = HttpResponse(csv_file.read(), content_type='text/csv')
+            response['Content-Disposition'] = f'attachment; filename={csv_filename}'
+            return response

@@ -15,4 +15,6 @@ urlpatterns = [
     path('upvote-downvote-comment', views.UpvoteorDownvoteCommentView.as_view()),
     path('delete-upvote-downvote', views.DeleteUpvoteorDownvotePostView.as_view()),
     path('delete-upvote-downvote-comment', views.DeleteUpvoteorDownvoteCommentView.as_view()),
+    path('add-image', views.AddImageToPostView.as_view()),
+    path('add-cover-image', views.AddCoverImageToPostView.as_view()),
 ]

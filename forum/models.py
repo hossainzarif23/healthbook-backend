@@ -3,6 +3,8 @@ from doctors.models import Doctor
 from patients.models import Patient
 from users.models import User
 
+from django.utils.translation import gettext_lazy as _
+
 # Create your models here.
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -65,7 +67,15 @@ class ReportComment(models.Model):
     reason = models.CharField(max_length = 100)
     date = models.DateTimeField(auto_now_add = True)
 
+def upload_to(instance, filename):
+    return 'forum/{filename}'.format(filename = filename)
+
 class Image(models.Model):
-    post = models.ForeignKey(Post, on_delete = models.CASCADE)
-    image_path = models.CharField(max_length = 200)
-    caption = models.CharField(max_length = 200)
+    post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name='images')
+    image_path = models.ImageField(_("Image"), upload_to = upload_to, null = True, blank = True)
+    caption = models.CharField(max_length = 200, null = True, blank = True)
+
+class CoverImage(models.Model):
+    post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name='cover_images')
+    image_path = models.ImageField(_("Image"), upload_to = upload_to, null = True, blank = True)
+    caption = models.CharField(max_length = 200, null = True, blank = True)
