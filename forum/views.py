@@ -4,8 +4,8 @@ from django.shortcuts import render
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from datetime import datetime, timedelta, date
-from .models import Post, Comment, Topic, UpvotePost, UpvoteComment, ReportPost, ReportComment, Image, CoverImage
-from .serializers import PostSerializer, UpvotePostSerializer, CommentSerializer, UpvoteCommentSerializer, UpdatePostSerializer, ImageSerializer, CoverImageSerializer
+from .models import Post, Comment, Topic, UpvotePost, UpvoteComment, ReportPost, ReportComment, Image, CoverImage, ReportPost, ReportComment
+from .serializers import PostSerializer, UpvotePostSerializer, CommentSerializer, UpvoteCommentSerializer, UpdatePostSerializer, ImageSerializer, CoverImageSerializer, ReportPostSerializer, ReportCommentSerializer
 from patients.models import Patient
 from users.models import User
 
@@ -204,3 +204,28 @@ class AddCoverImageToPostView(generics.CreateAPIView):
             return Response({'responseCode': 200, 'status': 'Cover Image added'})
         else:
             return Response({'responseCode': 400, 'status': serializer.errors})
+
+class ReportPostView(generics.CreateAPIView):
+    def create(self, request, *args, **kwargs):
+        serializer = ReportPostSerializer(data = request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'responseCode': 200, 'status': 'Post reported'})
+        return Response({'responseCode': 400, 'status': serializer.errors})
+    
+class DeleteReportPostView(generics.GenericAPIView):
+    def delete(self, request, *args, **kwargs):
+        id = request.data.get('id', None)
+        report = ReportPost.objects.filter(pk = id).first()
+        if report is None:
+            return Response({'responseCode': 400, 'status': 'No such report exists'})
+        report.delete()
+        return Response({'responseCode': 200, 'status': 'Report deleted'})
+
+class ReportCommentView(generics.CreateAPIView):
+    def create(self, request, *args, **kwargs):
+        serializer = ReportCommentSerializer(data = request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'responseCode': 200, 'status': 'Comment reported'})
+        return Response({'responseCode': 400, 'status': serializer.errors})

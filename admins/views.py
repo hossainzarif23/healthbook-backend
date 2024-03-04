@@ -10,12 +10,22 @@ from .serializers import AdminSerializer, DoctorVerificationSerializer
 from users.models import User
 from doctors.models import Doctor
 from patients.models import Patient
-from treatments.models import Treatment
+from treatments.models import Treatment, Prescription
+from forum.models import ReportPost, ReportComment
+from forum.serializers import ReportPostSerializer, ReportCommentSerializer
 from doctors.serializers import DoctorSerializer
 
 from django.http import HttpResponse
 
+from django.db.models import Count, Q
+
 import csv
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+import base64
+from io import BytesIO
 
 class AdminLoginView(generics.GenericAPIView):
     serializer_class = AdminSerializer
@@ -117,3 +127,131 @@ class GetTreatmentsData(generics.RetrieveAPIView):
             response = HttpResponse(csv_file.read(), content_type='text/csv')
             response['Content-Disposition'] = f'attachment; filename={csv_filename}'
             return response
+        
+class PostReportsView(generics.RetrieveAPIView):
+    def get(self, request, *args, **kwargs):
+        reports = ReportPost.objects.all()
+        return Response({'responseCode': 200, 'reports': ReportPostSerializer(reports, many = True).data})
+    
+
+class DiseaseFrequencyView(generics.RetrieveAPIView):
+    def get(self, request, *args, **kwargs):
+        one_year_ago = date.today() - timedelta(days=365)
+        treatments = Treatment.objects.filter(last_date__gte=one_year_ago).values('disease').annotate(count=Count('id'))
+
+        if not treatments:
+            df = pd.DataFrame(columns=['disease', 'count'])
+        else:
+            columns = ['disease', 'count']
+            data = treatments.values_list(*columns)
+            df = pd.DataFrame(data, columns=columns)
+
+        plt.figure(figsize=(8, 6))
+        plt.bar(df['disease'], df['count'], color='skyblue')
+        plt.xlabel('Disease')
+        plt.ylabel('Count')
+        plt.title("Last Year Disease Count (Last Year)")
+
+        plt.savefig('disease_treatment_counts.png')
+
+        buffer = BytesIO()
+        plt.savefig(buffer, format='png')
+        buffer.seek(0)
+
+        image_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
+        buffer.close()
+
+        response_data = {
+            'image': f'data:image/png;base64,{image_data}',
+        }
+        return Response({'responseCode': 200, 'response': response_data})
+    
+class TreatmentSuccessView(generics.RetrieveAPIView):
+    def retrieve(self, request, *args, **kwargs):
+        one_year_ago = date.today() - timedelta(days=365)
+        treatments = Treatment.objects.filter(last_date__gte=one_year_ago).values('disease').annotate(
+            success_count=Count('id', filter=Q(status='success')),
+            failure_count=Count('id', filter=Q(status='failure')),
+            ongoing_count=Count('id', filter=Q(status='ongoing'))
+        )
+
+        if not treatments:
+            df = pd.DataFrame(columns=['disease', 'success_count', 'failure_count', 'ongoing_count'])
+        else:
+            columns = ['disease', 'success_count', 'failure_count', 'ongoing_count']
+            data = treatments.values_list(*columns)
+            df = pd.DataFrame(data, columns=columns)
+
+        print(df)
+        # Plot side by side bars for success and failure count
+        fig, ax = plt.subplots(figsize=(10, 6))
+        # Bar width
+        bar_width = 0.2
+        # Position of bars on x-axis
+        r1 = df.index
+        r2 = [x + bar_width for x in r1]
+        r3 = [x + bar_width for x in r2]
+        # Plot bars for success count
+        ax.bar(r1, df['success_count'], width=bar_width, edgecolor='grey', label='Success', color='g')
+        # Plot bars for failure count
+        ax.bar(r2, df['failure_count'], width=bar_width, edgecolor='grey', label='Failure', color='r')
+        # Plot bars for ongoing count
+        ax.bar(r3, df['ongoing_count'], width=bar_width, edgecolor='grey', label='Ongoing', color='b')
+        # Add labels, title, and legend
+        ax.set_xlabel('Disease', fontweight='bold')
+        ax.set_ylabel('Count', fontweight='bold')
+        ax.set_xticks([r + bar_width for r in range(len(df.index))])
+        ax.set_xticklabels(df['disease'])
+        ax.set_title('Success, Failure and Ongoing Count for Each Disease')
+        ax.legend()
+        plt.savefig('disease_treatment_counts.png')
+        buffer = BytesIO()
+        plt.savefig(buffer, format='png')
+        buffer.seek(0)
+
+        # Encode the image data as base64
+        image_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
+
+        # Close the buffer to clear resources
+        buffer.close()
+        
+        response_data = {
+            # 'labels': df['disease'].tolist(),
+            # 'values': df['count'].tolist(),
+            'image': f'data:image/png;base64,{image_data}',
+        }
+        return Response({'responseCode': 200, 'response': response_data})
+    
+class PatientSatisfactionView(generics.RetrieveAPIView):
+    def get(self, request, *args, **kwargs):
+        one_year_ago = date.today() - timedelta(days=365)
+        patient_data = []
+        
+        for patient in Patient.objects.all():
+            treatment_count= Treatment.objects.filter(patient=patient, start_date__gte=one_year_ago).count()
+            prescription_count = Prescription.objects.filter(treatment__patient=patient, date__gte=one_year_ago).count()
+            satisfaction_rate = 10 - 0.4 * treatment_count - 0.1 * prescription_count
+            patient_data.append({'Patient_ID': patient.id, 'Satisfaction_Index': satisfaction_rate})
+
+        df = pd.DataFrame(patient_data)
+
+        plt.figure(figsize=(10, 6))
+        sns.kdeplot(data=df['Satisfaction_Index'], shade=True)
+        plt.title('Patient Health Satisfaction Index KDE Plot')
+        plt.xlabel('Satisfaction Index')
+        plt.ylabel('Density')
+
+        buffer = BytesIO()
+        plt.savefig(buffer, format='png')
+        buffer.seek(0)
+
+        # Encode the image data as base64
+        image_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
+
+        # Close the buffer to clear resources
+        buffer.close()
+
+        response_data = {
+            'image': f'data:image/png;base64,{image_data}',
+        }
+        return Response({'responseCode': 200, 'response': response_data})

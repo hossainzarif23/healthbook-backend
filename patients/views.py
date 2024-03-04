@@ -115,7 +115,7 @@ class PatientUpdateProfileView(generics.UpdateAPIView):
         phone_number = request.data['phone_number']
         password = request.data['password']
         patient = Patient.objects.filter(user__username = username).first()
-        other_users = User.objects.exclude(user__username = username)
+        other_users = User.objects.exclude(username = username)
         if patient is None:
             return Response({"error": "Patient doesn't exist", "responseCode": 400}, status = status.HTTP_400_BAD_REQUEST)
         if other_users.filter(email = email).exists():
@@ -463,12 +463,55 @@ class GetCurrentTreatmentsView(generics.RetrieveAPIView):
         # treatments = Treatment.objects.filter(patient__user__username = patient).all()
         return Response({'responseCode': 200, 'treatment': TreatmentSerializer(treatments, many = True).data})
     
+class MyDoctorsView(generics.RetrieveAPIView):
+    def retrieve(self, request, *args, **kwargs):
+        patient = request.GET.get('patient', None)
+        name = request.GET.get('name', None)
+        area = request.GET.get('area', None)
+        designation = request.GET.get('designation', None)
+        department = request.GET.get('department', None)
+
+        print(patient, name, area, designation, department)
+        treatments = Treatment.objects.filter(patient__user__username = patient)
+        doctor_ids = treatments.values_list('doctor', flat = True)
+        doctors = Doctor.objects.filter(pk__in = doctor_ids).all()
+
+        print(doctors)
+
+        if name is not None:
+            doctors = doctors.filter(name = name)
+
+        print(doctors)
+
+        if area is not None:
+            doctors = doctors.filter(consultency__clinic__area = area)
+
+        print(doctors)
+
+        if designation is not None:
+            doctors = doctors.filter(designation = designation)
+
+        print(doctors)
+
+        if department is not None:
+            doctors = doctors.filter(department = department)
+
+        print(doctors)
+
+        dynamic_attributes = ['username', 'name', 'hospital_name', 'department', 'designation', 'consultency']
+        return Response({'ResponseCode': 200, 'doctors': DoctorSerializer(doctors, fields = dynamic_attributes, many = True).data})
+
+
 class ShareTreatmentView(generics.CreateAPIView):
     def create(self, request, *args, **kwargs):
-        patient = request.GET.get('patient', None)
-        doctor_username = request.GET.get('doctor', None)
-        treatment = request.GET.get('treatment', None)
+        patient = request.data.get('patient', None)
+        doctor_username = request.data.get('doctor', None)
+        treatment = request.data.get('treatment', None)
+        print(patient)
+        print(doctor_username)
+        print(treatment)
         treatment_obj = Treatment.objects.filter(pk = treatment).first()
+        print(treatment_obj)
         if patient != treatment_obj.patient.user.username:
             return Response({'responseCode': 400, 'error': 'Not allowed to share others treatment'})
         doctor = Doctor.objects.filter(user__username = doctor_username).first()
@@ -546,7 +589,9 @@ class UpdateRatingView(generics.UpdateAPIView):
         patient_username = request.data.get('patient', None)
         doctor_username = request.data.get('doctor', None)
         rating = request.data.get('rating', None)
-        print(rating)
+        # print(rating)
+        print('Update Rating is called')
+
         patient_instance = Patient.objects.filter(user__username=patient_username).first()
         if patient_instance is None:
             return Response({'responseCode': 400, 'status': 'Patient not found'})
@@ -566,10 +611,16 @@ class UpdateRatingView(generics.UpdateAPIView):
             return Response({'responseCode': 200, 'status': 'Rating updated'})
         return Response({'responseCode': 400, 'status': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
         
-class DeleteRatingView(generics.DestroyAPIView):
+class DeleteRatingView(generics.GenericAPIView):
     def delete(self, request, *args, **kwargs):
-        patient_username = request.data.get('patient', None)
-        doctor_username = request.data.get('doctor', None)
+        patient_username = request.GET.get('patient', None)
+        doctor_username = request.GET.get('doctor', None)
+
+        print("Patient Username:", patient_username)
+        print("Doctor Username:", doctor_username)
+        print(request)
+        print(request.GET)
+
         patient_instance = Patient.objects.filter(user__username=patient_username).first()
         if patient_instance is None:
             return Response({'responseCode': 400, 'status': 'Patient not found'})
@@ -579,6 +630,9 @@ class DeleteRatingView(generics.DestroyAPIView):
         rating_instance = Rating.objects.filter(patient=patient_instance, doctor=doctor_instance).first()
         if rating_instance is None:
             return Response({'responseCode': 400, 'status': 'Rating not found'})
+        
+        print(rating_instance)
+
         rating_instance.delete()
         return Response({'responseCode': 200, 'status': 'Rating deleted'})
     
@@ -601,7 +655,7 @@ class PatientDiseaseFrequencyView(generics.RetrieveAPIView):
     def retrieve(self, request, *args, **kwargs):
         patient = request.GET.get('patient', None)
         one_year_ago = date.today() - timedelta(days=365)
-        patient_treatments = Treatment.objects.filter(patient__user__username=patient, last_date__gte=one_year_ago).annotate(count=Count('disease'))
+        patient_treatments = Treatment.objects.filter(patient__user__username=patient, last_date__gte=one_year_ago).values('disease').annotate(count=Count('disease'))
 
         if patient_treatments is None:
             df = pd.DataFrame(columns=['disease', 'count'])
@@ -609,6 +663,8 @@ class PatientDiseaseFrequencyView(generics.RetrieveAPIView):
             columns = ['disease', 'count']
             data = patient_treatments.values_list(*columns)
             df = pd.DataFrame(data, columns=columns)
+
+        print(df)
         
         # print(df)
         plt.figure(figsize=(8, 6))
@@ -640,7 +696,7 @@ class PatientTreatmentSuccessRateView(generics.RetrieveAPIView):
     def retrieve(self, request, *args, **kwargs):
         patient = request.GET.get('patient', None)
         one_year_ago = date.today() - timedelta(days=365)
-        patient_treatments = Treatment.objects.filter(patient__user__username=patient, last_date__gte=one_year_ago).annotate(success_count=Count('id', filter=Q(status='success')), failure_count=Count('id', filter=Q(status='failure')), ongoing_count=Count('id', filter=Q(status='ongoing')))
+        patient_treatments = Treatment.objects.filter(patient__user__username=patient, last_date__gte=one_year_ago).values('disease').annotate(success_count=Count('id', filter=Q(status='success')), failure_count=Count('id', filter=Q(status='failure')), ongoing_count=Count('id', filter=Q(status='ongoing')))
 
         if patient_treatments is None:
             df = pd.DataFrame(columns=['disease', 'success_count', 'failure_count', 'ongoing_count'])
@@ -648,6 +704,8 @@ class PatientTreatmentSuccessRateView(generics.RetrieveAPIView):
             columns = columns = ['disease', 'success_count', 'failure_count', 'ongoing_count']
             data = patient_treatments.values_list(*columns)
             df = pd.DataFrame(data, columns=columns)
+
+        print(df)
         # Plot side by side bars for success and failure count
         fig, ax = plt.subplots(figsize=(10, 6))
         # Bar width
@@ -712,7 +770,7 @@ class PatientDoctorVisitView(generics.RetrieveAPIView):
         plt.xlabel('Month')
         plt.ylabel('Number of Visits to Doctor')
         plt.title('Month-wise Count of Visits to Doctor (Last Year)')
-        plt.xticks(range(1, 13))  # Assuming month ranges from 1 to 12
+        plt.xticks(range(1, 13), rotation = 90)  # Assuming month ranges from 1 to 12
         plt.grid(axis='y', linestyle='--', alpha=0.7)
 
         plt.savefig('disease_treatment_counts.png')
@@ -739,8 +797,8 @@ class RecurringDiseasesView(generics.RetrieveAPIView):
         diseases = Treatment.objects.filter(
             Q(patient__user__username=patient) &
             Q(last_date__gte=three_year_ago) &
-            Q(start_date__month__range=[start_month, end_month]) |
-            Q(last_date__month__range=[start_month, end_month])
+            (Q(start_date__month__range=[start_month, end_month]) |
+            Q(last_date__month__range=[start_month, end_month]))
         ).values('disease').annotate(disease_count=Count('disease')).filter(
             disease_count__gte=2,
         )

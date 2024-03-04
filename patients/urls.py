@@ -8,6 +8,7 @@ urlpatterns = [
     path('profile', views.PatientProfileView.as_view()),
     path('update', views.PatientUpdateProfileView.as_view()),
     path('doctor-list', views.ListofDoctors.as_view()),
+    path('my-doctors', views.MyDoctorsView.as_view()),
     path('doctor', views.DoctorProfile.as_view()),
     path('get-access-requests', views.GetPendingRequests.as_view()),
     path('response-access', views.RequestUpdateStatusView.as_view()),

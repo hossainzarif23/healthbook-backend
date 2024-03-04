@@ -1,0 +1,355 @@
+id,disease,status,start_date,last_date,doctor_id,patient_id,verified,designation,doctor_name,hospital_name,specialty,cost
+1,malaria,success,2023-07-25,2023-08-11,7,1,no,assistant professor,sxczx,csds,medicine,1890.0
+2,dengue,ongoing,2023-04-14,2023-05-20,8,1,yes,lecturer,abcd,Ibn Sina Medical College,medicine,1890.0
+3,fever,ongoing,2023-05-12,2023-07-19,6,1,yes,lecturer,kanij,csds,medicine,1890.0
+4,malaria,success,2023-09-29,2023-10-04,3,2,no,lecturer,abcd,czxc,medicine,1000.0
+5,dengue,failure,2024-01-04,2024-02-28,6,2,no,professor,kanij,csds,medicine,122.0
+6,diarrhoea,success,2023-10-16,2023-12-18,4,2,no,assistant professor,Zarif Hossain,sdasc,medicine,1000.0
+7,fever,success,2023-07-30,2023-08-16,8,2,yes,lecturer,sxczx,Ibn Sina Medical College,medicine,0.0
+8,pneumonia,failure,2023-05-24,2023-08-04,8,3,yes,lecturer,abcd,Ibn Sina Medical College,medicine,0.0
+9,fever,success,2023-11-06,2024-02-21,8,3,no,lecturer,Zarif Hossain,czxc,medicine,0.0
+10,malaria,ongoing,2023-06-29,2023-09-12,5,3,no,assistant professor,kanij,sdasc,medicine,1000.0
+11,diarrhoea,failure,2023-08-14,2023-10-09,2,3,no,assistant professor,kanij,csds,medicine,1000.0
+12,fever,ongoing,2023-05-14,2023-07-19,7,4,yes,lecturer,kanij,sdasc,medicine,0.0
+13,dengue,failure,2024-01-16,2024-02-14,5,4,no,lecturer,Zarif Hossain,czxc,medicine,1890.0
+14,pneumonia,failure,2023-03-21,2023-06-05,3,4,no,professor,kanij,sdasc,medicine,122.0
+15,diarrhoea,ongoing,2023-08-18,2023-10-15,2,4,no,lecturer,kanij,sdasc,medicine,0.0
+16,malaria,failure,2023-08-04,2023-09-27,2,4,yes,lecturer,kanij,DMC,medicine,122.0
+17,malaria,success,2023-10-09,2023-11-01,8,5,yes,professor,Zarif Hossain,Ibn Sina Medical College,medicine,122.0
+18,fever,failure,2024-01-06,2024-02-18,8,5,yes,professor,kanij,csds,medicine,122.0
+19,dengue,success,2023-03-25,2023-05-08,2,5,no,assistant professor,Zarif Hossain,DMC,medicine,1890.0
+20,pneumonia,ongoing,2024-02-17,2024-03-08,7,5,yes,professor,abcd,csds,medicine,1890.0
+21,diarrhoea,success,2024-02-27,2024-03-15,1,6,no,lecturer,Zarif Hossain,czxc,medicine,1000.0
+22,dengue,success,2023-10-15,2023-10-26,2,6,no,professor,kanij,czxc,medicine,122.0
+23,fever,ongoing,2024-01-12,2024-02-01,8,6,no,assistant professor,kanij,DMC,medicine,0.0
+24,pneumonia,success,2023-04-20,2023-05-20,5,7,yes,lecturer,kanij,csds,medicine,1890.0
+25,diarrhoea,ongoing,2024-01-15,2024-01-24,4,7,yes,professor,kanij,DMC,medicine,0.0
+26,malaria,ongoing,2023-09-05,2023-09-09,1,7,yes,lecturer,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+27,fever,failure,2023-05-24,2023-06-04,8,8,yes,professor,abcd,czxc,medicine,1000.0
+28,pneumonia,failure,2023-09-16,2023-09-25,5,8,yes,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,1890.0
+29,diarrhoea,success,2023-06-13,2023-06-21,5,8,yes,professor,kanij,sdasc,medicine,122.0
+30,diarrhoea,ongoing,2023-08-22,2023-09-15,5,9,yes,lecturer,Zarif Hossain,csds,medicine,1000.0
+31,fever,ongoing,2023-03-31,2023-04-18,3,9,no,professor,kanij,czxc,medicine,1000.0
+32,pneumonia,ongoing,2023-10-04,2023-10-26,5,9,yes,lecturer,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+33,fever,success,2024-02-09,2024-03-10,7,10,no,lecturer,Zarif Hossain,sdasc,medicine,122.0
+34,malaria,failure,2024-02-07,2024-02-28,8,10,yes,professor,sxczx,csds,medicine,1890.0
+35,dengue,success,2023-05-08,2023-05-30,7,10,yes,assistant professor,abcd,czxc,medicine,122.0
+36,pneumonia,ongoing,2023-08-28,2023-09-04,5,10,yes,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+37,fever,success,2024-02-02,2024-02-09,4,11,yes,professor,Zarif Hossain,csds,medicine,1890.0
+38,dengue,failure,2023-10-23,2023-11-01,8,11,no,lecturer,kanij,DMC,medicine,1890.0
+39,malaria,success,2023-12-15,2024-01-07,7,11,yes,assistant professor,sxczx,czxc,medicine,0.0
+40,diarrhoea,success,2023-11-05,2023-11-26,1,11,no,lecturer,sxczx,Ibn Sina Medical College,medicine,1890.0
+41,pneumonia,failure,2024-01-07,2024-01-08,7,11,yes,lecturer,kanij,Ibn Sina Medical College,medicine,1000.0
+42,fever,failure,2023-04-02,2023-05-01,2,12,no,assistant professor,sxczx,DMC,medicine,1890.0
+43,diarrhoea,success,2024-02-16,2024-03-06,2,12,yes,assistant professor,abcd,czxc,medicine,1890.0
+44,malaria,success,2024-02-12,2024-03-09,1,12,yes,assistant professor,Zarif Hossain,czxc,medicine,0.0
+45,dengue,ongoing,2023-10-03,2023-10-27,4,13,yes,professor,kanij,czxc,medicine,1890.0
+46,malaria,ongoing,2023-11-25,2023-12-07,8,13,yes,assistant professor,sxczx,sdasc,medicine,122.0
+47,fever,failure,2023-06-05,2023-06-28,3,13,no,assistant professor,abcd,czxc,medicine,1890.0
+48,pneumonia,ongoing,2023-11-23,2023-12-17,4,13,no,assistant professor,Zarif Hossain,czxc,medicine,1000.0
+49,dengue,failure,2023-08-15,2023-09-01,6,14,no,professor,abcd,czxc,medicine,1000.0
+50,fever,failure,2023-05-25,2023-06-15,1,14,yes,professor,abcd,czxc,medicine,1000.0
+51,diarrhoea,failure,2023-09-10,2023-09-22,1,14,yes,professor,Zarif Hossain,Ibn Sina Medical College,medicine,1000.0
+52,dengue,ongoing,2023-06-21,2023-06-25,4,15,yes,assistant professor,kanij,Ibn Sina Medical College,medicine,1890.0
+53,fever,ongoing,2023-10-14,2023-10-15,7,15,no,lecturer,Zarif Hossain,DMC,medicine,1000.0
+54,malaria,ongoing,2023-06-25,2023-07-16,2,15,yes,lecturer,sxczx,czxc,medicine,1890.0
+55,pneumonia,failure,2023-06-16,2023-06-28,7,16,no,professor,abcd,sdasc,medicine,122.0
+56,dengue,ongoing,2024-02-28,2024-03-10,5,16,no,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,122.0
+57,malaria,success,2023-03-15,2023-04-13,3,16,yes,professor,kanij,Ibn Sina Medical College,medicine,122.0
+58,fever,success,2024-01-14,2024-02-12,6,16,no,assistant professor,abcd,czxc,medicine,1890.0
+59,dengue,ongoing,2023-12-11,2023-12-27,5,17,yes,lecturer,abcd,DMC,medicine,1000.0
+60,malaria,ongoing,2023-04-10,2023-05-05,7,17,no,professor,sxczx,csds,medicine,0.0
+61,diarrhoea,success,2023-09-24,2023-09-29,7,17,no,lecturer,abcd,csds,medicine,1890.0
+62,pneumonia,ongoing,2024-02-24,2024-02-27,8,17,no,lecturer,sxczx,czxc,medicine,0.0
+63,diarrhoea,failure,2023-07-19,2023-08-09,1,18,no,professor,Zarif Hossain,DMC,medicine,1000.0
+64,pneumonia,failure,2023-08-02,2023-08-19,4,18,no,professor,Zarif Hossain,sdasc,medicine,0.0
+65,dengue,ongoing,2024-01-23,2024-02-12,8,18,no,assistant professor,sxczx,czxc,medicine,1000.0
+66,pneumonia,success,2024-02-10,2024-02-11,1,19,yes,professor,sxczx,csds,medicine,0.0
+67,diarrhoea,failure,2023-07-21,2023-08-07,5,19,no,lecturer,abcd,Ibn Sina Medical College,medicine,1000.0
+68,fever,ongoing,2024-02-14,2024-02-24,6,19,yes,professor,sxczx,Ibn Sina Medical College,medicine,1890.0
+69,diarrhoea,failure,2023-04-08,2023-05-08,7,20,yes,lecturer,sxczx,Ibn Sina Medical College,medicine,0.0
+70,dengue,ongoing,2023-12-27,2024-01-04,1,20,no,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,122.0
+71,pneumonia,failure,2023-11-15,2023-11-25,4,20,no,professor,Zarif Hossain,csds,medicine,1000.0
+72,fever,failure,2023-12-03,2023-12-31,1,20,no,lecturer,Zarif Hossain,Ibn Sina Medical College,medicine,122.0
+73,malaria,success,2023-12-17,2024-01-07,7,20,no,assistant professor,abcd,sdasc,medicine,0.0
+74,malaria,success,2024-01-10,2024-01-26,7,21,no,lecturer,Zarif Hossain,sdasc,medicine,0.0
+75,fever,failure,2023-07-15,2023-08-14,5,21,yes,lecturer,Zarif Hossain,csds,medicine,122.0
+76,diarrhoea,ongoing,2023-10-29,2023-11-15,6,21,no,professor,sxczx,DMC,medicine,1890.0
+77,pneumonia,ongoing,2023-08-31,2023-09-18,3,22,yes,assistant professor,sxczx,sdasc,medicine,1000.0
+78,diarrhoea,success,2023-07-10,2023-07-22,8,22,yes,lecturer,kanij,DMC,medicine,0.0
+79,malaria,success,2024-02-29,2024-03-13,1,22,yes,assistant professor,kanij,czxc,medicine,1890.0
+80,dengue,ongoing,2023-04-27,2023-05-17,8,22,yes,lecturer,abcd,Ibn Sina Medical College,medicine,1000.0
+81,fever,success,2023-12-15,2023-12-19,4,22,no,professor,Zarif Hossain,czxc,medicine,1890.0
+82,diarrhoea,success,2023-12-09,2023-12-31,4,23,no,lecturer,abcd,Ibn Sina Medical College,medicine,1890.0
+83,fever,success,2023-07-23,2023-08-11,2,23,no,professor,abcd,sdasc,medicine,1000.0
+84,pneumonia,success,2023-08-27,2023-09-02,3,23,yes,assistant professor,sxczx,Ibn Sina Medical College,medicine,1890.0
+85,malaria,ongoing,2023-10-04,2023-10-24,2,23,yes,assistant professor,sxczx,csds,medicine,1000.0
+86,diarrhoea,ongoing,2024-02-24,2024-03-21,3,24,yes,professor,sxczx,sdasc,medicine,1000.0
+87,malaria,success,2023-03-14,2023-04-04,7,24,no,lecturer,abcd,DMC,medicine,1000.0
+88,fever,success,2023-05-20,2023-05-26,4,24,no,assistant professor,kanij,csds,medicine,0.0
+89,dengue,failure,2023-04-10,2023-05-05,1,24,no,assistant professor,kanij,csds,medicine,0.0
+90,diarrhoea,ongoing,2023-09-27,2023-10-18,4,25,no,lecturer,abcd,Ibn Sina Medical College,medicine,1890.0
+91,malaria,failure,2023-12-29,2024-01-09,4,25,yes,lecturer,kanij,csds,medicine,122.0
+92,fever,ongoing,2023-03-28,2023-04-26,4,25,no,lecturer,Zarif Hossain,Ibn Sina Medical College,medicine,1890.0
+93,dengue,failure,2023-04-26,2023-05-21,1,26,yes,professor,kanij,sdasc,medicine,1000.0
+94,pneumonia,success,2023-11-29,2023-12-28,7,26,no,assistant professor,kanij,DMC,medicine,122.0
+95,malaria,ongoing,2024-01-13,2024-01-23,7,26,no,lecturer,kanij,DMC,medicine,1000.0
+96,dengue,failure,2023-09-28,2023-10-14,5,27,yes,professor,sxczx,czxc,medicine,0.0
+97,fever,failure,2023-09-08,2023-09-12,6,27,yes,lecturer,sxczx,sdasc,medicine,122.0
+98,pneumonia,success,2023-10-12,2023-10-26,7,27,no,lecturer,sxczx,DMC,medicine,0.0
+99,malaria,ongoing,2023-04-14,2023-05-05,6,27,no,assistant professor,sxczx,DMC,medicine,0.0
+100,diarrhoea,failure,2024-02-27,2024-03-16,3,28,yes,lecturer,Zarif Hossain,csds,medicine,1000.0
+101,dengue,failure,2023-04-04,2023-05-03,6,28,no,professor,Zarif Hossain,csds,medicine,0.0
+102,fever,success,2023-11-01,2023-11-11,6,28,no,lecturer,kanij,csds,medicine,1890.0
+103,dengue,ongoing,2024-02-12,2024-03-07,2,29,yes,lecturer,Zarif Hossain,csds,medicine,122.0
+104,malaria,ongoing,2023-10-13,2023-11-02,3,29,yes,assistant professor,Zarif Hossain,DMC,medicine,1000.0
+105,fever,success,2024-02-27,2024-03-19,2,29,yes,lecturer,Zarif Hossain,Ibn Sina Medical College,medicine,122.0
+106,diarrhoea,ongoing,2023-08-18,2023-09-16,4,29,yes,lecturer,sxczx,Ibn Sina Medical College,medicine,122.0
+107,dengue,failure,2023-04-04,2023-04-13,1,30,yes,assistant professor,Zarif Hossain,DMC,medicine,122.0
+108,pneumonia,ongoing,2023-08-24,2023-09-18,2,30,no,assistant professor,sxczx,csds,medicine,0.0
+109,diarrhoea,ongoing,2023-05-01,2023-05-02,8,30,no,assistant professor,Zarif Hossain,DMC,medicine,0.0
+110,fever,ongoing,2023-04-21,2023-05-07,7,30,no,professor,Zarif Hossain,DMC,medicine,1000.0
+111,malaria,ongoing,2023-03-17,2023-04-16,1,30,yes,lecturer,abcd,czxc,medicine,1000.0
+112,malaria,success,2023-12-01,2023-12-13,8,31,no,assistant professor,kanij,sdasc,medicine,0.0
+113,diarrhoea,success,2023-05-13,2023-06-06,8,31,no,lecturer,sxczx,sdasc,medicine,0.0
+114,fever,ongoing,2023-12-05,2023-12-21,7,31,no,lecturer,abcd,DMC,medicine,1000.0
+115,pneumonia,failure,2024-01-27,2024-01-30,2,32,no,assistant professor,Zarif Hossain,DMC,medicine,122.0
+116,fever,failure,2023-06-16,2023-07-14,7,32,yes,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+117,malaria,ongoing,2023-07-19,2023-08-01,7,32,yes,lecturer,sxczx,csds,medicine,1890.0
+118,diarrhoea,failure,2023-09-28,2023-10-17,8,32,yes,lecturer,sxczx,DMC,medicine,0.0
+119,dengue,failure,2023-09-07,2023-09-28,7,32,no,professor,kanij,csds,medicine,122.0
+120,pneumonia,ongoing,2023-07-24,2023-08-18,3,33,yes,assistant professor,kanij,csds,medicine,0.0
+121,malaria,failure,2023-09-05,2023-09-26,6,33,no,professor,kanij,csds,medicine,0.0
+122,diarrhoea,ongoing,2023-06-22,2023-06-30,5,33,yes,assistant professor,sxczx,Ibn Sina Medical College,medicine,122.0
+123,dengue,ongoing,2023-09-27,2023-10-15,2,33,yes,lecturer,Zarif Hossain,czxc,medicine,1890.0
+124,fever,success,2023-09-01,2023-09-20,1,33,no,lecturer,sxczx,Ibn Sina Medical College,medicine,1890.0
+125,malaria,success,2023-09-09,2023-09-11,3,34,no,professor,Zarif Hossain,sdasc,medicine,122.0
+126,diarrhoea,ongoing,2023-05-15,2023-06-13,1,34,no,lecturer,kanij,csds,medicine,1890.0
+127,dengue,failure,2023-07-06,2023-07-17,5,34,no,assistant professor,Zarif Hossain,DMC,medicine,0.0
+128,diarrhoea,success,2023-09-09,2023-09-21,3,35,yes,assistant professor,kanij,Ibn Sina Medical College,medicine,122.0
+129,malaria,success,2023-11-25,2023-12-07,6,35,yes,assistant professor,sxczx,csds,medicine,122.0
+130,fever,success,2023-05-28,2023-06-12,3,35,yes,lecturer,Zarif Hossain,Ibn Sina Medical College,medicine,1000.0
+131,dengue,success,2023-10-29,2023-11-04,6,35,no,assistant professor,kanij,czxc,medicine,0.0
+132,dengue,success,2023-03-07,2023-03-24,3,36,no,assistant professor,abcd,czxc,medicine,1000.0
+133,diarrhoea,ongoing,2024-01-04,2024-01-07,8,36,yes,professor,kanij,sdasc,medicine,0.0
+134,pneumonia,failure,2023-11-08,2023-12-03,8,36,no,professor,Zarif Hossain,sdasc,medicine,1890.0
+135,malaria,success,2023-06-29,2023-07-20,2,36,no,lecturer,Zarif Hossain,czxc,medicine,1890.0
+136,dengue,ongoing,2023-04-21,2023-04-30,6,37,yes,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+137,malaria,failure,2023-03-28,2023-04-05,8,37,yes,professor,abcd,DMC,medicine,122.0
+138,pneumonia,failure,2023-11-24,2023-12-09,2,37,no,lecturer,sxczx,czxc,medicine,122.0
+139,fever,failure,2024-02-27,2024-03-17,3,37,no,professor,kanij,Ibn Sina Medical College,medicine,122.0
+140,diarrhoea,ongoing,2023-08-12,2023-08-16,3,37,yes,professor,sxczx,DMC,medicine,122.0
+141,fever,ongoing,2023-08-10,2023-08-30,6,38,no,lecturer,kanij,sdasc,medicine,0.0
+142,diarrhoea,failure,2023-12-01,2023-12-21,2,38,yes,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,122.0
+143,dengue,success,2023-11-13,2023-12-10,7,38,no,assistant professor,kanij,sdasc,medicine,0.0
+144,malaria,ongoing,2023-07-02,2023-07-08,6,38,no,assistant professor,abcd,DMC,medicine,0.0
+145,pneumonia,success,2023-11-11,2023-11-12,1,39,no,assistant professor,abcd,csds,medicine,1890.0
+146,diarrhoea,ongoing,2023-04-21,2023-04-28,3,39,yes,professor,kanij,DMC,medicine,1890.0
+147,malaria,ongoing,2023-05-29,2023-06-21,1,39,no,lecturer,sxczx,czxc,medicine,0.0
+148,fever,failure,2023-05-19,2023-06-18,2,39,yes,professor,Zarif Hossain,DMC,medicine,122.0
+149,dengue,ongoing,2023-03-14,2023-03-28,6,39,yes,professor,abcd,czxc,medicine,122.0
+150,pneumonia,ongoing,2023-08-06,2023-08-12,3,40,no,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,1000.0
+151,malaria,success,2024-02-22,2024-03-20,2,40,no,professor,abcd,sdasc,medicine,0.0
+152,fever,success,2023-08-21,2023-09-20,3,40,no,professor,sxczx,Ibn Sina Medical College,medicine,122.0
+153,dengue,failure,2023-06-26,2023-07-06,2,40,yes,lecturer,abcd,csds,medicine,1000.0
+154,dengue,ongoing,2023-03-29,2023-04-01,8,41,yes,professor,Zarif Hossain,csds,medicine,1000.0
+155,fever,ongoing,2023-04-01,2023-04-26,2,41,yes,assistant professor,Zarif Hossain,sdasc,medicine,1000.0
+156,malaria,success,2023-08-24,2023-09-02,6,41,yes,assistant professor,kanij,czxc,medicine,1000.0
+157,diarrhoea,ongoing,2023-03-09,2023-03-11,8,41,yes,lecturer,Zarif Hossain,DMC,medicine,1000.0
+158,pneumonia,ongoing,2023-12-30,2024-01-21,8,41,no,assistant professor,Zarif Hossain,DMC,medicine,0.0
+159,diarrhoea,success,2023-11-21,2023-12-05,1,42,no,assistant professor,sxczx,czxc,medicine,1000.0
+160,dengue,success,2023-09-20,2023-10-12,5,42,yes,lecturer,kanij,sdasc,medicine,1890.0
+161,pneumonia,ongoing,2023-04-14,2023-04-24,1,42,no,professor,sxczx,czxc,medicine,1000.0
+162,fever,success,2024-01-04,2024-01-19,3,42,no,lecturer,abcd,DMC,medicine,122.0
+163,diarrhoea,ongoing,2024-02-21,2024-03-18,3,43,no,assistant professor,Zarif Hossain,sdasc,medicine,0.0
+164,pneumonia,success,2023-12-03,2023-12-29,6,43,yes,professor,kanij,DMC,medicine,1890.0
+165,dengue,failure,2023-06-16,2023-07-02,3,43,no,professor,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+166,malaria,success,2023-03-27,2023-04-20,5,43,yes,assistant professor,sxczx,sdasc,medicine,1890.0
+167,pneumonia,ongoing,2024-02-02,2024-02-24,7,44,no,lecturer,Zarif Hossain,csds,medicine,1890.0
+168,malaria,ongoing,2023-06-27,2023-06-28,2,44,no,lecturer,kanij,csds,medicine,0.0
+169,diarrhoea,success,2023-10-19,2023-11-10,8,44,yes,lecturer,kanij,DMC,medicine,1000.0
+170,dengue,failure,2023-03-13,2023-03-31,6,44,yes,professor,kanij,Ibn Sina Medical College,medicine,0.0
+171,fever,ongoing,2023-08-27,2023-09-06,6,44,yes,assistant professor,sxczx,Ibn Sina Medical College,medicine,1000.0
+172,malaria,ongoing,2023-04-30,2023-05-01,3,45,yes,lecturer,abcd,sdasc,medicine,122.0
+173,fever,failure,2023-07-10,2023-08-02,1,45,no,professor,kanij,sdasc,medicine,0.0
+174,pneumonia,failure,2023-12-15,2024-01-06,1,45,yes,lecturer,kanij,csds,medicine,122.0
+175,diarrhoea,success,2023-03-20,2023-04-15,4,45,no,lecturer,sxczx,czxc,medicine,1890.0
+176,diarrhoea,success,2023-05-06,2023-05-18,7,46,no,lecturer,Zarif Hossain,czxc,medicine,122.0
+177,pneumonia,failure,2023-07-21,2023-08-09,1,46,yes,assistant professor,Zarif Hossain,DMC,medicine,1890.0
+178,malaria,ongoing,2023-07-04,2023-07-10,7,46,no,lecturer,Zarif Hossain,csds,medicine,1890.0
+179,dengue,ongoing,2023-06-08,2023-06-29,5,47,yes,lecturer,sxczx,sdasc,medicine,0.0
+180,diarrhoea,success,2023-03-27,2023-04-06,4,47,no,professor,Zarif Hossain,csds,medicine,1000.0
+181,malaria,failure,2023-07-21,2023-08-10,7,47,yes,assistant professor,kanij,czxc,medicine,1000.0
+182,fever,ongoing,2024-01-11,2024-01-17,8,47,no,lecturer,sxczx,czxc,medicine,1890.0
+183,diarrhoea,failure,2024-01-31,2024-02-16,6,48,no,professor,sxczx,Ibn Sina Medical College,medicine,1890.0
+184,fever,failure,2023-09-21,2023-10-11,3,48,no,lecturer,abcd,czxc,medicine,122.0
+185,malaria,failure,2023-10-21,2023-11-20,4,48,yes,lecturer,abcd,sdasc,medicine,1000.0
+186,dengue,success,2023-12-01,2023-12-24,6,48,yes,assistant professor,kanij,czxc,medicine,1000.0
+187,diarrhoea,failure,2023-06-14,2023-06-25,6,49,yes,assistant professor,sxczx,Ibn Sina Medical College,medicine,122.0
+188,fever,ongoing,2023-07-05,2023-08-04,7,49,yes,professor,Zarif Hossain,csds,medicine,122.0
+189,dengue,failure,2023-12-31,2024-01-30,5,49,yes,lecturer,abcd,DMC,medicine,0.0
+190,pneumonia,ongoing,2023-11-18,2023-11-30,7,49,yes,assistant professor,abcd,DMC,medicine,122.0
+191,malaria,ongoing,2023-12-11,2023-12-28,8,50,yes,professor,Zarif Hossain,czxc,medicine,122.0
+192,dengue,success,2023-03-19,2023-03-23,2,50,no,professor,abcd,sdasc,medicine,1000.0
+193,diarrhoea,ongoing,2023-10-16,2023-11-01,6,50,yes,professor,sxczx,czxc,medicine,122.0
+194,fever,success,2023-06-12,2023-07-07,1,50,no,lecturer,abcd,Ibn Sina Medical College,medicine,1890.0
+195,malaria,failure,2023-09-25,2023-10-05,3,51,no,assistant professor,sxczx,sdasc,medicine,122.0
+196,pneumonia,failure,2024-01-26,2024-01-29,1,51,yes,lecturer,kanij,csds,medicine,122.0
+197,diarrhoea,success,2024-01-30,2024-02-09,6,51,yes,assistant professor,Zarif Hossain,csds,medicine,122.0
+198,fever,success,2023-10-31,2023-11-17,8,51,yes,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,1890.0
+199,dengue,ongoing,2023-08-11,2023-08-28,6,51,no,professor,abcd,csds,medicine,1000.0
+200,pneumonia,success,2023-10-09,2023-10-26,2,52,yes,assistant professor,Zarif Hossain,czxc,medicine,1000.0
+201,diarrhoea,ongoing,2023-12-22,2024-01-14,5,52,yes,professor,Zarif Hossain,sdasc,medicine,0.0
+202,dengue,ongoing,2023-07-01,2023-07-15,6,52,no,lecturer,sxczx,sdasc,medicine,1000.0
+203,malaria,success,2023-03-24,2023-04-13,6,52,no,assistant professor,sxczx,sdasc,medicine,1890.0
+204,fever,success,2023-04-02,2023-05-02,8,52,yes,professor,kanij,DMC,medicine,122.0
+205,malaria,ongoing,2023-12-25,2024-01-13,2,53,no,professor,sxczx,czxc,medicine,1890.0
+206,pneumonia,success,2024-02-07,2024-02-10,7,53,no,professor,sxczx,sdasc,medicine,122.0
+207,dengue,failure,2023-09-22,2023-10-14,8,53,yes,assistant professor,kanij,Ibn Sina Medical College,medicine,0.0
+208,dengue,success,2023-09-16,2023-09-17,3,54,no,lecturer,Zarif Hossain,sdasc,medicine,122.0
+209,diarrhoea,success,2023-03-21,2023-04-09,8,54,no,lecturer,kanij,DMC,medicine,1890.0
+210,pneumonia,ongoing,2023-08-03,2023-08-30,4,54,yes,assistant professor,Zarif Hossain,sdasc,medicine,1890.0
+211,fever,ongoing,2023-08-22,2023-08-27,3,54,no,professor,abcd,czxc,medicine,122.0
+212,malaria,ongoing,2023-04-02,2023-04-26,7,54,yes,lecturer,abcd,csds,medicine,122.0
+213,diarrhoea,ongoing,2023-05-19,2023-06-02,3,55,yes,lecturer,kanij,DMC,medicine,0.0
+214,pneumonia,failure,2024-01-08,2024-01-17,5,55,yes,professor,Zarif Hossain,czxc,medicine,0.0
+215,malaria,failure,2024-02-07,2024-03-03,6,55,no,assistant professor,sxczx,czxc,medicine,1890.0
+216,dengue,success,2023-04-21,2023-05-11,5,56,yes,assistant professor,sxczx,csds,medicine,1890.0
+217,malaria,failure,2024-01-20,2024-02-16,8,56,yes,assistant professor,abcd,DMC,medicine,1890.0
+218,diarrhoea,failure,2023-10-23,2023-11-20,4,56,yes,assistant professor,abcd,sdasc,medicine,122.0
+219,fever,ongoing,2023-06-14,2023-06-21,4,57,yes,assistant professor,abcd,csds,medicine,0.0
+220,dengue,success,2023-10-02,2023-10-17,5,57,yes,professor,Zarif Hossain,czxc,medicine,0.0
+221,diarrhoea,success,2024-01-24,2024-02-10,3,57,no,assistant professor,kanij,sdasc,medicine,1890.0
+222,malaria,failure,2023-09-21,2023-10-16,6,57,no,assistant professor,kanij,DMC,medicine,122.0
+223,dengue,failure,2023-05-19,2023-06-16,8,58,yes,assistant professor,sxczx,Ibn Sina Medical College,medicine,122.0
+224,pneumonia,failure,2023-04-28,2023-05-26,5,58,yes,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,1890.0
+225,fever,success,2023-11-15,2023-12-03,4,58,yes,assistant professor,abcd,czxc,medicine,122.0
+226,malaria,success,2023-11-23,2023-12-08,1,58,yes,lecturer,sxczx,sdasc,medicine,1890.0
+227,dengue,failure,2023-05-22,2023-05-27,5,59,no,assistant professor,abcd,Ibn Sina Medical College,medicine,1890.0
+228,pneumonia,ongoing,2023-08-23,2023-09-21,4,59,no,lecturer,Zarif Hossain,Ibn Sina Medical College,medicine,122.0
+229,malaria,ongoing,2023-03-14,2023-04-10,4,59,no,professor,Zarif Hossain,csds,medicine,122.0
+230,pneumonia,success,2023-09-24,2023-10-23,7,60,no,professor,abcd,czxc,medicine,1890.0
+231,fever,ongoing,2024-02-19,2024-03-06,8,60,yes,assistant professor,Zarif Hossain,DMC,medicine,1000.0
+232,dengue,ongoing,2023-07-15,2023-07-26,4,60,no,professor,sxczx,sdasc,medicine,1890.0
+233,diarrhoea,ongoing,2023-04-06,2023-04-14,2,60,yes,lecturer,sxczx,Ibn Sina Medical College,medicine,1000.0
+234,malaria,ongoing,2023-06-04,2023-06-05,3,60,no,assistant professor,sxczx,czxc,medicine,122.0
+235,pneumonia,ongoing,2024-02-21,2024-03-05,4,61,no,lecturer,abcd,csds,medicine,0.0
+236,malaria,failure,2024-02-15,2024-02-22,5,61,yes,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,1890.0
+237,diarrhoea,failure,2023-07-12,2023-07-27,1,61,yes,professor,abcd,czxc,medicine,122.0
+238,dengue,ongoing,2024-01-17,2024-02-02,8,61,yes,professor,Zarif Hossain,csds,medicine,1000.0
+239,fever,failure,2023-11-09,2023-12-09,4,61,no,professor,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+240,dengue,success,2023-05-02,2023-05-19,5,62,no,assistant professor,Zarif Hossain,csds,medicine,1890.0
+241,diarrhoea,success,2023-09-20,2023-10-15,3,62,no,lecturer,Zarif Hossain,DMC,medicine,1000.0
+242,fever,success,2023-12-30,2024-01-16,2,62,yes,assistant professor,abcd,Ibn Sina Medical College,medicine,1000.0
+243,pneumonia,ongoing,2023-07-09,2023-07-26,7,62,yes,assistant professor,abcd,csds,medicine,1000.0
+244,malaria,success,2023-10-13,2023-11-12,8,63,no,assistant professor,abcd,csds,medicine,1890.0
+245,pneumonia,success,2023-08-02,2023-08-24,3,63,yes,assistant professor,kanij,Ibn Sina Medical College,medicine,1000.0
+246,diarrhoea,ongoing,2024-01-06,2024-02-01,2,63,yes,professor,kanij,DMC,medicine,1000.0
+247,dengue,ongoing,2023-05-25,2023-06-21,8,63,no,assistant professor,Zarif Hossain,czxc,medicine,1000.0
+248,fever,ongoing,2023-12-23,2023-12-31,5,63,no,professor,kanij,csds,medicine,1890.0
+249,fever,success,2023-03-30,2023-04-05,2,64,no,lecturer,Zarif Hossain,csds,medicine,1890.0
+250,malaria,ongoing,2023-03-30,2023-04-27,8,64,no,lecturer,sxczx,czxc,medicine,0.0
+251,dengue,success,2023-08-25,2023-08-31,5,64,no,professor,kanij,Ibn Sina Medical College,medicine,122.0
+252,pneumonia,success,2023-06-14,2023-06-26,4,64,no,professor,sxczx,Ibn Sina Medical College,medicine,1890.0
+253,diarrhoea,success,2023-11-28,2023-12-08,8,64,yes,lecturer,Zarif Hossain,DMC,medicine,0.0
+254,malaria,ongoing,2023-09-12,2023-10-01,6,65,yes,assistant professor,abcd,czxc,medicine,1000.0
+255,dengue,failure,2023-04-01,2023-04-09,5,65,yes,lecturer,sxczx,csds,medicine,1000.0
+256,fever,failure,2024-02-15,2024-03-04,1,65,no,professor,Zarif Hossain,DMC,medicine,122.0
+257,diarrhoea,ongoing,2023-06-15,2023-06-16,7,66,no,lecturer,sxczx,czxc,medicine,0.0
+258,pneumonia,success,2024-02-28,2024-03-09,3,66,no,lecturer,abcd,csds,medicine,122.0
+259,malaria,ongoing,2023-09-26,2023-10-11,4,66,yes,professor,kanij,czxc,medicine,122.0
+260,pneumonia,success,2023-12-23,2024-01-11,1,67,yes,professor,sxczx,csds,medicine,1000.0
+261,malaria,failure,2023-12-31,2024-01-10,3,67,no,lecturer,kanij,sdasc,medicine,1000.0
+262,dengue,failure,2023-04-09,2023-05-05,1,67,no,lecturer,Zarif Hossain,DMC,medicine,0.0
+263,diarrhoea,ongoing,2023-12-23,2024-01-14,2,67,no,assistant professor,kanij,DMC,medicine,122.0
+264,fever,failure,2023-12-08,2024-01-03,6,67,yes,assistant professor,Zarif Hossain,sdasc,medicine,1000.0
+265,pneumonia,success,2023-08-21,2023-08-24,1,68,no,lecturer,kanij,czxc,medicine,0.0
+266,dengue,failure,2024-01-27,2024-02-10,5,68,yes,assistant professor,kanij,DMC,medicine,1890.0
+267,fever,failure,2023-09-25,2023-10-01,5,68,no,assistant professor,sxczx,DMC,medicine,0.0
+268,pneumonia,success,2023-05-02,2023-05-10,5,69,yes,assistant professor,kanij,csds,medicine,0.0
+269,dengue,failure,2023-03-15,2023-04-04,8,69,yes,lecturer,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+270,diarrhoea,success,2023-10-19,2023-10-27,1,69,yes,assistant professor,kanij,csds,medicine,0.0
+271,fever,failure,2023-09-24,2023-10-07,8,69,yes,professor,Zarif Hossain,sdasc,medicine,122.0
+272,pneumonia,failure,2023-07-10,2023-07-18,5,70,yes,lecturer,sxczx,csds,medicine,1890.0
+273,malaria,success,2023-05-24,2023-06-16,7,70,yes,lecturer,kanij,czxc,medicine,1000.0
+274,diarrhoea,ongoing,2023-08-16,2023-09-10,5,70,yes,professor,abcd,czxc,medicine,0.0
+275,malaria,failure,2023-03-06,2023-03-11,1,71,no,assistant professor,Zarif Hossain,csds,medicine,0.0
+276,diarrhoea,ongoing,2024-02-12,2024-02-25,4,71,yes,lecturer,sxczx,Ibn Sina Medical College,medicine,0.0
+277,fever,success,2024-02-13,2024-02-26,4,71,yes,lecturer,Zarif Hossain,czxc,medicine,122.0
+278,dengue,success,2023-12-02,2023-12-08,3,72,yes,lecturer,sxczx,sdasc,medicine,0.0
+279,pneumonia,failure,2023-09-08,2023-09-24,5,72,yes,assistant professor,kanij,sdasc,medicine,122.0
+280,diarrhoea,ongoing,2023-07-25,2023-08-19,7,72,no,professor,sxczx,DMC,medicine,122.0
+281,malaria,failure,2024-01-10,2024-02-06,3,72,yes,lecturer,sxczx,sdasc,medicine,1000.0
+282,fever,ongoing,2023-12-05,2023-12-21,3,72,no,assistant professor,kanij,Ibn Sina Medical College,medicine,1000.0
+283,malaria,success,2023-08-30,2023-09-24,3,73,yes,lecturer,sxczx,csds,medicine,122.0
+284,fever,success,2023-11-16,2023-12-02,4,73,no,assistant professor,Zarif Hossain,sdasc,medicine,1000.0
+285,dengue,failure,2024-02-09,2024-02-24,3,73,no,professor,sxczx,csds,medicine,122.0
+286,pneumonia,failure,2023-04-11,2023-04-24,4,73,yes,lecturer,kanij,sdasc,medicine,1890.0
+287,pneumonia,failure,2023-10-24,2023-11-11,5,74,no,professor,Zarif Hossain,czxc,medicine,1890.0
+288,malaria,failure,2023-10-05,2023-11-02,8,74,yes,lecturer,kanij,Ibn Sina Medical College,medicine,1890.0
+289,dengue,success,2023-06-12,2023-06-22,8,74,no,professor,kanij,DMC,medicine,122.0
+290,fever,failure,2023-04-17,2023-05-07,8,74,no,lecturer,abcd,czxc,medicine,1890.0
+291,diarrhoea,success,2023-04-04,2023-04-23,5,74,no,lecturer,abcd,DMC,medicine,0.0
+292,fever,success,2023-08-17,2023-08-29,5,75,yes,professor,abcd,DMC,medicine,0.0
+293,dengue,ongoing,2023-09-15,2023-09-29,7,75,yes,professor,Zarif Hossain,sdasc,medicine,0.0
+294,pneumonia,ongoing,2023-11-29,2023-12-12,8,75,yes,assistant professor,kanij,Ibn Sina Medical College,medicine,0.0
+295,malaria,success,2023-08-20,2023-08-24,8,75,yes,professor,Zarif Hossain,czxc,medicine,1000.0
+296,diarrhoea,ongoing,2023-12-13,2024-01-09,1,75,yes,professor,kanij,Ibn Sina Medical College,medicine,122.0
+297,pneumonia,success,2023-08-09,2023-08-19,6,76,no,professor,Zarif Hossain,sdasc,medicine,122.0
+298,malaria,failure,2024-02-05,2024-02-19,7,76,yes,professor,Zarif Hossain,czxc,medicine,1000.0
+299,dengue,success,2023-10-07,2023-10-10,8,76,no,lecturer,kanij,csds,medicine,0.0
+300,diarrhoea,ongoing,2024-01-14,2024-01-28,7,76,no,professor,Zarif Hossain,csds,medicine,1890.0
+301,dengue,success,2023-10-29,2023-11-12,2,77,no,professor,Zarif Hossain,Ibn Sina Medical College,medicine,1000.0
+302,fever,success,2023-07-11,2023-07-23,2,77,yes,assistant professor,sxczx,csds,medicine,122.0
+303,pneumonia,failure,2023-06-26,2023-07-03,5,77,yes,professor,Zarif Hossain,DMC,medicine,1000.0
+304,malaria,failure,2023-03-21,2023-04-03,5,77,yes,professor,abcd,czxc,medicine,1000.0
+305,diarrhoea,success,2023-03-10,2023-03-30,7,77,yes,professor,kanij,czxc,medicine,1890.0
+306,malaria,failure,2023-11-25,2023-12-19,3,78,yes,professor,Zarif Hossain,csds,medicine,122.0
+307,fever,ongoing,2023-06-20,2023-07-20,4,78,yes,lecturer,abcd,DMC,medicine,1000.0
+308,diarrhoea,failure,2023-05-23,2023-05-29,6,78,yes,professor,Zarif Hossain,csds,medicine,0.0
+309,pneumonia,ongoing,2023-05-06,2023-05-29,2,78,yes,lecturer,Zarif Hossain,sdasc,medicine,1890.0
+310,dengue,ongoing,2023-11-10,2023-11-20,2,78,no,professor,Zarif Hossain,csds,medicine,122.0
+311,dengue,failure,2023-03-22,2023-04-10,4,79,no,lecturer,kanij,csds,medicine,1000.0
+312,diarrhoea,failure,2023-06-10,2023-06-16,3,79,yes,lecturer,sxczx,csds,medicine,122.0
+313,pneumonia,ongoing,2023-11-04,2023-11-15,5,79,no,professor,kanij,sdasc,medicine,1890.0
+314,fever,ongoing,2023-05-17,2023-05-24,3,79,no,assistant professor,kanij,Ibn Sina Medical College,medicine,1890.0
+315,pneumonia,failure,2023-07-26,2023-08-23,6,80,yes,lecturer,sxczx,DMC,medicine,1890.0
+316,dengue,failure,2023-10-06,2023-10-08,6,80,yes,lecturer,sxczx,DMC,medicine,1890.0
+317,diarrhoea,ongoing,2023-08-12,2023-09-10,1,80,yes,assistant professor,kanij,czxc,medicine,0.0
+318,malaria,ongoing,2023-07-13,2023-08-09,5,80,yes,lecturer,kanij,DMC,medicine,0.0
+319,diarrhoea,ongoing,2023-10-17,2023-10-21,5,81,no,professor,sxczx,sdasc,medicine,0.0
+320,fever,failure,2024-01-02,2024-01-17,1,81,no,professor,kanij,csds,medicine,0.0
+321,dengue,failure,2023-09-04,2023-09-22,7,81,no,assistant professor,kanij,czxc,medicine,0.0
+322,diarrhoea,failure,2024-01-16,2024-02-14,3,82,yes,lecturer,abcd,DMC,medicine,1890.0
+323,malaria,failure,2023-09-28,2023-10-06,5,82,yes,lecturer,kanij,Ibn Sina Medical College,medicine,0.0
+324,dengue,failure,2024-02-03,2024-03-01,8,82,yes,assistant professor,abcd,sdasc,medicine,1890.0
+325,fever,failure,2023-11-11,2023-11-30,5,82,yes,assistant professor,abcd,DMC,medicine,122.0
+326,pneumonia,success,2023-05-16,2023-06-13,2,82,no,lecturer,kanij,Ibn Sina Medical College,medicine,0.0
+327,pneumonia,ongoing,2023-08-08,2023-08-29,1,83,yes,assistant professor,sxczx,sdasc,medicine,1000.0
+328,malaria,success,2024-01-12,2024-01-14,3,83,yes,lecturer,sxczx,DMC,medicine,1890.0
+329,fever,success,2024-02-15,2024-02-24,4,83,no,professor,kanij,csds,medicine,1890.0
+330,malaria,success,2023-08-25,2023-09-15,5,84,no,lecturer,kanij,czxc,medicine,122.0
+331,dengue,success,2023-07-25,2023-08-03,7,84,yes,assistant professor,sxczx,Ibn Sina Medical College,medicine,0.0
+332,diarrhoea,ongoing,2024-01-03,2024-01-29,2,84,no,professor,kanij,sdasc,medicine,1000.0
+333,fever,ongoing,2023-12-01,2023-12-17,7,84,yes,professor,kanij,czxc,medicine,0.0
+334,pneumonia,ongoing,2023-09-29,2023-10-14,2,84,yes,professor,abcd,czxc,medicine,1890.0
+335,fever,ongoing,2023-06-14,2023-06-24,2,85,yes,lecturer,sxczx,Ibn Sina Medical College,medicine,122.0
+336,pneumonia,failure,2023-11-14,2023-12-13,4,85,yes,lecturer,abcd,sdasc,medicine,0.0
+337,malaria,success,2024-02-19,2024-03-15,2,85,no,lecturer,Zarif Hossain,DMC,medicine,0.0
+338,pneumonia,failure,2023-07-02,2023-07-30,4,86,no,professor,abcd,sdasc,medicine,1000.0
+339,dengue,success,2024-02-22,2024-03-10,3,86,no,lecturer,sxczx,DMC,medicine,0.0
+340,fever,success,2023-11-15,2023-11-26,6,86,no,assistant professor,sxczx,Ibn Sina Medical College,medicine,0.0
+341,malaria,ongoing,2023-10-25,2023-11-21,8,86,no,assistant professor,Zarif Hossain,csds,medicine,1890.0
+342,diarrhoea,failure,2023-04-11,2023-04-25,7,86,no,professor,kanij,Ibn Sina Medical College,medicine,1000.0
+343,diarrhoea,success,2024-02-22,2024-03-10,6,87,yes,lecturer,Zarif Hossain,csds,medicine,1890.0
+344,malaria,ongoing,2023-08-25,2023-09-08,6,87,no,professor,abcd,DMC,medicine,1890.0
+345,pneumonia,ongoing,2023-07-28,2023-07-31,3,87,no,lecturer,abcd,csds,medicine,122.0
+346,dengue,success,2023-11-18,2023-12-14,3,88,no,assistant professor,abcd,DMC,medicine,0.0
+347,diarrhoea,ongoing,2023-12-15,2023-12-19,5,88,yes,professor,abcd,csds,medicine,1000.0
+348,pneumonia,ongoing,2023-03-04,2023-03-31,3,88,yes,lecturer,kanij,czxc,medicine,1000.0
+349,pneumonia,success,2023-03-31,2023-04-03,6,89,no,assistant professor,Zarif Hossain,Ibn Sina Medical College,medicine,0.0
+350,diarrhoea,failure,2024-01-03,2024-01-14,2,89,no,assistant professor,sxczx,czxc,medicine,1000.0
+351,dengue,success,2023-06-08,2023-06-27,3,89,yes,assistant professor,abcd,Ibn Sina Medical College,medicine,1890.0
+352,fever,failure,2023-04-03,2023-04-04,7,90,no,lecturer,kanij,Ibn Sina Medical College,medicine,1890.0
+353,malaria,success,2023-06-21,2023-07-08,3,90,yes,lecturer,abcd,csds,medicine,0.0
+354,dengue,failure,2023-06-15,2023-07-15,4,90,yes,assistant professor,Zarif Hossain,csds,medicine,0.0

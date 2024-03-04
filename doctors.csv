@@ -1,0 +1,12 @@
+id,name,area,dob,description,department,designation,user_id,hospital_id,verified
+1,Dr. Patr6,Mymensingh,1987-05-18,Specialist in Cardiology,Cardiology,professor,patr6,3,0
+2,Dr. Mich2,Rajshahi,1974-03-15,Specialist in Orthopedics,Pediatrics,professor,mich2,2,0
+3,Dr. Patr5,Rangpur,1972-06-08,Specialist in Cardiology,Orthopedics,professor,patr5,5,0
+4,Dr. Lind3,Mymensingh,1975-12-16,Specialist in Cardiology,Cardiology,professor,lind3,1,0
+5,Dr. Jenn5,Rajshahi,1969-04-09,Specialist in Orthopedics,Neurology,professor,jenn5,3,0
+6,Dr. Will8,Khulna,1995-05-30,Specialist in Cardiology,Orthopedics,professor,will8,5,0
+7,Dr. Lind5,Khulna,1970-03-18,Specialist in Neurology,Pediatrics,professor,lind5,2,0
+8,Dr. John0,Sylhet,1971-10-10,Specialist in Cardiology,Cardiology,professor,john0,2,0
+9,Dr. Patr3,Dhaka,1993-05-11,Specialist in Orthopedics,Orthopedics,professor,patr3,6,0
+10,Dr. Will4,Barisal,1985-09-12,Specialist in Cardiology,Orthopedics,professor,will4,3,0
+

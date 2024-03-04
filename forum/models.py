@@ -61,6 +61,9 @@ class ReportPost(models.Model):
     reason = models.CharField(max_length = 100)
     date = models.DateTimeField(auto_now_add = True)
 
+    class Meta:
+        ordering = ['-date']
+
 class ReportComment(models.Model):
     comment = models.ForeignKey(Comment, on_delete = models.CASCADE)
     user = models.ForeignKey(User, on_delete = models.CASCADE)

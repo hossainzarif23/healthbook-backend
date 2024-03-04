@@ -1,0 +1,91 @@
+id,age,weight,address,bp_low,bp_high,notes,date,treatment_id,next_appointment,height,cost
+1,45,71,Rajshahi,88,138,Take rest,2024-03-03,31,10,182,1428.58
+2,54,149,Rajshahi,66,128,Patient is experiencing chest pain,2024-03-03,104,5,146,791.34
+3,79,75,Dhaka,72,131,N/A,2024-03-03,328,28,172,755.02
+4,16,132,Rajshahi,74,125,Patient is experiencing chest pain,2024-03-03,38,24,153,2481.57
+5,83,148,Rajshahi,87,123,Patient is experiencing chest pain,2024-03-03,12,29,176,806.81
+6,26,145,Rajshahi,70,134,Patient is experiencing chest pain,2024-03-03,93,18,199,2207.56
+7,14,61,Rajshahi,87,129,N/A,2024-03-03,231,21,199,1017.52
+8,79,34,Rajshahi,71,122,Patient is experiencing chest pain,2024-03-03,98,22,152,1344.9
+9,26,108,Dhaka,89,127,Patient is experiencing chest pain,2024-03-03,44,11,165,1290.28
+10,100,141,Dhaka,85,133,Patient is experiencing chest pain,2024-03-03,192,22,140,2152.4
+11,61,53,Dhaka,86,125,Take rest,2024-03-03,204,26,164,1099.98
+12,96,78,Rajshahi,82,121,Take rest,2024-03-03,119,4,189,617.55
+13,70,46,Dhaka,79,138,Take rest,2024-03-03,326,27,155,2517.28
+14,60,92,Rajshahi,87,122,Patient is experiencing chest pain,2024-03-03,162,27,182,829.82
+15,12,101,Rajshahi,73,123,Patient is experiencing chest pain,2024-03-03,47,4,167,1255.97
+16,75,72,Dhaka,84,132,Take rest,2024-03-03,208,3,158,2559.61
+17,29,21,Rajshahi,89,138,N/A,2024-03-03,42,28,200,1358.21
+18,55,43,Dhaka,78,139,Patient is experiencing chest pain,2024-03-03,284,30,167,740.27
+19,37,143,Dhaka,73,127,Patient is experiencing chest pain,2024-03-03,9,29,176,2223.54
+20,84,38,Rajshahi,83,123,Take rest,2024-03-03,228,16,149,1717.61
+21,41,104,Rajshahi,68,129,Patient is experiencing chest pain,2024-03-03,37,13,157,963.39
+22,24,76,Rajshahi,61,123,Patient is experiencing chest pain,2024-03-03,69,20,153,2160.84
+23,21,46,Dhaka,63,130,Patient is experiencing chest pain,2024-03-03,130,1,162,2463.6
+24,62,48,Dhaka,68,130,Patient is experiencing chest pain,2024-03-03,310,20,145,2183.98
+25,34,53,Dhaka,62,135,Take rest,2024-03-03,185,25,161,1822.76
+26,16,119,Dhaka,90,140,Take rest,2024-03-03,150,5,181,729.7
+27,90,80,Dhaka,62,135,Take rest,2024-03-03,45,23,151,1510.96
+28,34,105,Dhaka,81,123,N/A,2024-03-03,93,8,194,965.91
+29,100,20,Dhaka,61,130,Take rest,2024-03-03,160,27,172,1285.37
+30,27,83,Rajshahi,71,130,N/A,2024-03-03,168,14,175,1491.16
+31,14,43,Dhaka,90,122,Take rest,2024-03-03,133,8,180,1793.64
+32,71,107,Rajshahi,76,129,Take rest,2024-03-03,96,8,186,1104.1
+33,99,137,Dhaka,64,139,Take rest,2024-03-03,238,28,160,1457.35
+34,51,32,Rajshahi,78,125,Take rest,2024-03-03,160,20,189,2289.58
+35,27,22,Rajshahi,79,137,Take rest,2024-03-03,194,7,161,2267.63
+36,27,95,Dhaka,76,120,Patient is experiencing chest pain,2024-03-03,229,23,147,1095.52
+37,30,117,Dhaka,61,120,Take rest,2024-03-03,209,18,196,1824.4
+38,32,106,Rajshahi,74,123,Patient is experiencing chest pain,2024-03-03,235,5,146,1683.14
+39,24,116,Rajshahi,75,124,Patient is experiencing chest pain,2024-03-03,89,24,144,1776.96
+40,48,136,Rajshahi,84,133,Patient is experiencing chest pain,2024-03-03,249,10,191,1694.86
+41,89,145,Rajshahi,79,135,N/A,2024-03-03,138,26,170,1351.99
+42,56,30,Rajshahi,65,125,Patient is experiencing chest pain,2024-03-03,7,24,198,2695.8
+43,80,39,Rajshahi,85,139,N/A,2024-03-03,159,17,166,1379.99
+44,20,128,Rajshahi,89,132,N/A,2024-03-03,221,16,158,1289.81
+45,17,43,Rajshahi,78,139,Patient is experiencing chest pain,2024-03-03,272,9,156,1144.53
+46,69,133,Dhaka,70,130,N/A,2024-03-03,266,27,184,1925.02
+47,53,34,Dhaka,67,132,Patient is experiencing chest pain,2024-03-03,91,14,151,1084.04
+48,50,121,Rajshahi,64,138,Take rest,2024-03-03,249,22,186,1188.68
+49,64,56,Dhaka,89,138,N/A,2024-03-03,15,27,158,1369.45
+50,90,66,Rajshahi,69,134,N/A,2024-03-03,345,19,168,2394.88
+51,100,74,Dhaka,82,121,N/A,2024-03-03,225,15,145,1037.73
+52,39,115,Dhaka,86,121,Patient is experiencing chest pain,2024-03-03,234,24,145,2031.97
+53,16,111,Dhaka,62,124,Take rest,2024-03-03,209,4,142,2744.0
+54,34,40,Rajshahi,67,128,Patient is experiencing chest pain,2024-03-03,262,16,157,866.27
+55,52,128,Rajshahi,87,131,Take rest,2024-03-03,244,30,163,537.33
+56,47,83,Dhaka,71,130,Patient is experiencing chest pain,2024-03-03,21,24,145,1359.28
+57,57,21,Rajshahi,90,128,N/A,2024-03-03,106,12,188,1338.19
+58,78,134,Dhaka,72,131,Take rest,2024-03-03,16,18,185,2198.7
+59,17,104,Dhaka,64,125,Take rest,2024-03-03,169,6,151,1581.26
+60,69,140,Rajshahi,79,139,N/A,2024-03-03,100,12,166,2372.48
+61,75,76,Dhaka,66,137,Take rest,2024-03-03,110,18,184,1977.59
+62,48,115,Dhaka,70,136,Take rest,2024-03-03,87,12,199,1188.33
+63,43,81,Rajshahi,79,134,N/A,2024-03-03,266,9,199,2710.68
+64,45,55,Rajshahi,69,129,Patient is experiencing chest pain,2024-03-03,155,24,144,2750.55
+65,17,114,Rajshahi,65,124,Take rest,2024-03-03,227,8,143,2606.12
+66,49,128,Rajshahi,84,134,Take rest,2024-03-03,88,28,147,1399.15
+67,62,112,Dhaka,89,137,N/A,2024-03-03,58,29,193,550.81
+68,83,56,Dhaka,70,129,N/A,2024-03-03,280,3,192,2519.82
+69,54,57,Rajshahi,68,136,Take rest,2024-03-03,335,22,148,1126.98
+70,21,91,Dhaka,77,125,Take rest,2024-03-03,269,1,145,2741.21
+71,50,130,Dhaka,69,129,Patient is experiencing chest pain,2024-03-03,283,12,186,2850.25
+72,60,37,Dhaka,71,134,Take rest,2024-03-03,273,29,174,1183.61
+73,76,107,Rajshahi,70,132,Patient is experiencing chest pain,2024-03-03,15,9,156,1527.74
+74,92,107,Dhaka,63,133,Patient is experiencing chest pain,2024-03-03,204,25,169,2417.27
+75,23,68,Rajshahi,90,123,Take rest,2024-03-03,350,28,161,1852.6
+76,46,26,Dhaka,76,120,N/A,2024-03-03,5,19,196,2938.07
+77,66,61,Rajshahi,81,125,Take rest,2024-03-03,264,19,180,1004.57
+78,39,124,Dhaka,76,132,N/A,2024-03-03,11,29,152,2291.97
+79,78,64,Dhaka,85,140,Take rest,2024-03-03,83,27,183,1318.12
+80,95,99,Dhaka,80,140,Take rest,2024-03-03,106,24,162,1313.57
+81,64,44,Rajshahi,87,128,N/A,2024-03-03,253,14,172,2121.33
+82,14,147,Rajshahi,90,126,Take rest,2024-03-03,234,17,146,2428.08
+83,29,131,Dhaka,69,140,Take rest,2024-03-03,105,28,140,1852.85
+84,22,102,Dhaka,67,130,Patient is experiencing chest pain,2024-03-03,29,26,197,1208.77
+85,32,97,Rajshahi,72,127,Patient is experiencing chest pain,2024-03-03,193,13,163,2436.61
+86,22,68,Rajshahi,86,133,Take rest,2024-03-03,122,12,194,1043.82
+87,29,142,Dhaka,60,123,Patient is experiencing chest pain,2024-03-03,204,13,170,2431.52
+88,95,33,Dhaka,75,129,Take rest,2024-03-03,221,13,140,1773.63
+89,66,60,Rajshahi,84,136,N/A,2024-03-03,127,19,181,2142.71
+90,100,46,Dhaka,70,125,Patient is experiencing chest pain,2024-03-03,86,27,188,2627.77

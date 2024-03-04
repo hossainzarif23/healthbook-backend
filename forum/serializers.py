@@ -9,7 +9,7 @@ class CommentSerializer(serializers.ModelSerializer):
     downvotes = serializers.SerializerMethodField()
     class Meta:
         model = Comment
-        fields = ('id', 'author', 'post', 'content', 'date', 'upvotes', 'downvotes')
+        fields = ('id', 'author', 'post', 'content', 'date', 'upvotes', 'downvotes', 'update_date')
 
     def get_upvotes(self, obj):
         # Efficiently count upvotes using nested serializer and Subquery
@@ -110,4 +110,15 @@ class UpvotePostSerializer(serializers.ModelSerializer):
 class UpvoteCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = UpvoteComment
+        fields = '__all__'
+
+class ReportPostSerializer(serializers.ModelSerializer):
+    title = serializers.CharField(source = 'post.title', read_only = True)
+    class Meta:
+        model = ReportPost
+        fields = '__all__'
+
+class ReportCommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ReportComment
         fields = '__all__'
