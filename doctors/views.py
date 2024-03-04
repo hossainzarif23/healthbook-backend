@@ -515,7 +515,7 @@ class GetPatientSuccessRateView(generics.RetrieveAPIView):
     def retrieve(self, request, *args, **kwargs):
         doctor = request.GET.get('doctor', None)
         one_year_ago = date.today() - timedelta(days=365)
-        doctor_treatments = Treatment.objects.filter(doctor__user__username=doctor, last_date__gte=one_year_ago).annotate(success_count=Count('id', filter=Q(status='success')), failure_count=Count('id', filter=Q(status='failure')), ongoing_count=Count('id', filter=Q(status='ongoing')))
+        doctor_treatments = Treatment.objects.filter(doctor__user__username=doctor, last_date__gte=one_year_ago).values('disease').annotate(success_count=Count('id', filter=Q(status='success')), failure_count=Count('id', filter=Q(status='failure')), ongoing_count=Count('id', filter=Q(status='ongoing')))
         
         columns = ['disease', 'success_count', 'failure_count', 'ongoing_count']
         data = doctor_treatments.values_list(*columns)

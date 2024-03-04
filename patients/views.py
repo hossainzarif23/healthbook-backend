@@ -18,7 +18,10 @@ from treatments.serializers import TreatmentSerializer, RequestSerializer, Presc
 from django.http.response import JsonResponse
 from django.utils.dateparse import parse_date
 
-from django.db.models import Count, Q
+from django.db import models
+
+from django.db.models import Count, Q, ExpressionWrapper, F
+from django.db.models import OuterRef, Subquery
 from django.db.models.functions import ExtractMonth
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -283,14 +286,17 @@ class GetCurrentMedicinesView(generics.RetrieveAPIView):
     def retrieve(self, request, *args, **kwargs):
         user = request.GET.get('user', None)
         patient = request.GET.get('patient', None)
+
+        current_date = date.today()
+
         disease = request.GET.get('disease', None)
-        current_date = datetime.now().date()
         min_valid_date = current_date - timedelta(days=Medicine.objects.first().duration)
 
         if user != patient:
             return Response({'responseCode': 400, 'status': 'Not authorized to view prescription'})
         medicines = Medicine.objects.filter(prescription__treatment__patient__user__username = patient, prescription__date__gte = min_valid_date).all()
         print(medicines)
+
         if len(medicines) > 0:
             return Response({'responseCode': 200, 'medicines': MedicineSerializer(medicines, many = True).data})
         else:

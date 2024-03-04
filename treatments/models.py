@@ -55,6 +55,7 @@ class Treatment(models.Model):
         constraints = [
             models.UniqueConstraint(fields = ['patient', 'doctor', 'disease', 'start_date'], name = 'unique_patient_doctor_disease_start_date')
         ]
+        ordering = ['-last_date']
 
 class Prescription(models.Model):
     age = models.IntegerField()
@@ -67,6 +68,9 @@ class Prescription(models.Model):
     notes = models.CharField(max_length = 255, null = True, blank = True)
     treatment = models.ForeignKey(Treatment, on_delete = models.CASCADE, null = True, blank = True)
     date = models.DateField()
+
+    class Meta:
+        ordering = ['-date']
 
 class Symptom(models.Model):
     prescription = models.ForeignKey(Prescription, related_name = 'symptoms', on_delete = models.CASCADE)
